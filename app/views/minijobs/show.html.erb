@@ -1,0 +1,14 @@
+<h1>
+<%= @minijob.title %>
+</h1>
+<p>
+<%= @minijob.description %>
+</p>
+<p>
+<%= @minijob.timi %>
+</p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_minijob_path(@minijob) %>
+<%= link_to "Delete", minijob_path(@minijob), method: :delete, data: {confirm: "Are you sure?"} %>
+

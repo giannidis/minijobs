@@ -1,0 +1,10 @@
+	<% @minijobs.each do |minijob| %>
+	  <h2>
+	    <%= link_to minijob.title, minijob %>
+	  </h2>
+	  <p>
+	    <%= minijob.description %>
+	  </p>
+	<% end %>
+
+	<%= link_to "New miniJob", new_minijob_path %>
