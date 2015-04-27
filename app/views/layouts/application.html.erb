@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-</body>
+    <li>
+      <%= link_to "All miniJobs", root_path %>
+    </li>
+    <% Category.all.each do |category| %>
+      <%= link_to category.name, minijobs_path(category: category.name) %>
+    <% end %>
+    <%= yield %>
+  </body>
 </html>
