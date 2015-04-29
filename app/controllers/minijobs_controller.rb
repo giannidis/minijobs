@@ -1,5 +1,6 @@
 class MinijobsController < ApplicationController
 		before_action :find_minijob, only: [:show, :edit, :update, :destroy]
+		before_action :authenticate_user!, except: [:index, :show]
 	def index
 			@minijobs = Minijob.all.order("created_at DESC")
 			if params[:tag].present? 
@@ -17,14 +18,14 @@ class MinijobsController < ApplicationController
 	end
 
 	def new
-		@minijob = Minijob.new
+		@minijob = current_user.minijobs.build
 	end
 
 	def create
-		@minijob = Minijob.new(minijobs_params)
+		@minijob= current_user.minijobs.build(minijobs_params)
 
 		if @minijob.save
-			redirect_to @minijob
+			redirect_to @minijob, notice: "Succesfully created new minijob"
 		else
 			render "New"
 		end
@@ -49,7 +50,7 @@ class MinijobsController < ApplicationController
 	private
 
 	def minijobs_params
-		params.require(:minijob).permit(:title, :description, :plithos, :paradosi, :link, :timi, :category_id, :tag_list)
+		params.require(:minijob).permit(:title, :description, :plithos, :paradosi, :timi, :category_id, :user_id, :tag_list)
 	end
 
 	def find_minijob
