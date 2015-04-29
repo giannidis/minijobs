@@ -30,6 +30,10 @@
         <li>
           <%= link_to 'Edit Profile',edit_user_registration_path %>
         </li>
+        <li>
+          <%= link_to 'My Profile',user_path(current_user.id) %>
+        </li>
+
       </ul>
     <% else %>
       <ul class="nav navbar-nav navbar-right">

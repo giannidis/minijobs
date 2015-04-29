@@ -1,0 +1,38 @@
+<div class="main_content">
+  <div class="row" id="recipe_top">
+    <div class="col-md-8">
+      
+        <div class="container">
+          <h1>
+            <%= @user.name %>
+          </h1>
+          <h3>Website:</h3>
+              <%=link_to @user.website, "http://#{@user.website}"%>
+              <h3>Phone:</h3>
+          <h4>
+            <%= @user.phone %>
+          </h4>
+          <h1>Surname:</h1>
+           <h4>
+            <%= @user.surname %>
+          </h4>
+          <h1>Birthday:</h1>
+          <h4>
+            <%= @user.birthday %>
+          </h4>
+          <h1>City:</h1>
+          <h4>
+            <%= @user.city %>
+          </h4>
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+    <div class="col-md-12">
+      <%= link_to "Back", root_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>
