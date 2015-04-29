@@ -3,7 +3,7 @@
 		<%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
 	  <%= f.input :title, label: "MiniJob Title" %> <br/>
 	  <%= f.input :description, label: "MiniJob Description" %> <br/>
-	  <%= f.input :link, label: "dropbox link" %> <br/>
+	  
 	  <%= f.input :paradosi, label: "πρεπει να ολοκληρωθεί την" %> <br/>
 
 		<% @minijob.tag_types.each do |tag| %>
