@@ -1,12 +1,16 @@
 class MinijobsController < ApplicationController
 		before_action :find_minijob, only: [:show, :edit, :update, :destroy]
 	def index
-		if params[:category].blank?
 			@minijobs = Minijob.all.order("created_at DESC")
-		else
-			@category_id = Category.find_by(name: params[:category]).id
-			@minijobs = Minijob.where(category_id: @category_id).order("created_at DESC")
-		end
+			if params[:tag].present? 
+	      @minijob = Minijob.tagged_with(params[:tag])
+	  	else
+		    @minijob = Minijob.all.order("created_at DESC")
+		    respond_to do |format|
+			    format.html  #index.html.erb
+			    format.json { render json: @minijobs }
+	    	end 
+	  	end  
 	end
 
 	def show  	
@@ -45,7 +49,7 @@ class MinijobsController < ApplicationController
 	private
 
 	def minijobs_params
-		params.require(:minijob).permit(:title, :description, :timi, :category_id)
+		params.require(:minijob).permit(:title, :description, :timi, :category_id, :tag_list)
 	end
 
 	def find_minijob

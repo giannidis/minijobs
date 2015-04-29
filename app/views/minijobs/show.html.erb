@@ -9,6 +9,14 @@
 	<h3>Κόστος ανα ώρα:  </h3>
 		<%= @minijob.timi %> €
 	</p>
+	<% @minijob.tags.any? %>
+  <% @minijob.tags.each do |tag| %>
+	  <span class="label label-teal">
+	    <%= link_to tag.name, tag_path(tag.name) %>
+	  </span>  
+   <% end %>
+   <br><br><br>
+
 
 <%= link_to "Home", root_path %>
 <%= link_to "Edit", edit_minijob_path(@minijob) %>
