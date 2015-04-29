@@ -49,7 +49,7 @@ class MinijobsController < ApplicationController
 	private
 
 	def minijobs_params
-		params.require(:minijob).permit(:title, :description, :timi, :category_id, :tag_list)
+		params.require(:minijob).permit(:title, :description, :plithos, :paradosi, :link, :timi, :category_id, :tag_list)
 	end
 
 	def find_minijob

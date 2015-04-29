@@ -6,9 +6,23 @@
 		<%= @minijob.description %>
 	</p>
 	<p>
-	<h3>Κόστος ανα ώρα:  </h3>
+	<h3>ποσό κόστους ανα προιόν  </h3>
 		<%= @minijob.timi %> €
 	</p>
+		<h3>ποσοτητα</h3>
+		<%= @minijob.plithos %>
+	</p>
+
+	</p>
+		<h3>πρεπει να ολοκληρωθει την</h3>
+		<%= @minijob.paradosi %>
+	</p>
+
+	</p>
+		<h3>dropbox link</h3>
+		<%=link_to @minijob.link, "http://#{@minijob.link}"%>
+	</p>
+
 	<% @minijob.tags.any? %>
   <% @minijob.tags.each do |tag| %>
 	  <span class="label label-teal">

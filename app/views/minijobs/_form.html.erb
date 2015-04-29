@@ -3,6 +3,8 @@
 		<%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
 	  <%= f.input :title, label: "MiniJob Title" %> <br/>
 	  <%= f.input :description, label: "MiniJob Description" %> <br/>
+	  <%= f.input :link, label: "dropbox link" %> <br/>
+	  <%= f.input :paradosi, label: "πρεπει να ολοκληρωθεί την" %> <br/>
 
 		<% @minijob.tag_types.each do |tag| %>
 	  <div class="form-group">
@@ -14,7 +16,8 @@
 	  <% end %>
 
 
-	  <%= f.input :timi, label: "Poso tha kostizei" %>
+	  <%= f.input :timi, label: "ποσό κόστους ανα προιόν", :placeholder => "πχ 2€" %>
+	  <%= f.input :plithos, label: "ποσοτητα", :placeholder => "πχ 100" %>
 	  <br/>
 	  <%= f.button :submit %>
 	<% end %>
