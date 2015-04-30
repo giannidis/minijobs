@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429174936) do
+ActiveRecord::Schema.define(version: 20150430174325) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -71,6 +71,10 @@ ActiveRecord::Schema.define(version: 20150429174936) do
     t.text     "website"
     t.string   "phone"
     t.string   "city"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
