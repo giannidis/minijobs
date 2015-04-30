@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(version: 20150429121038) do
     t.string   "title"
     t.text     "description"
     t.integer  "timi"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "category_id"
-    t.date     "xronos_paradosis"
     t.text     "link"
     t.integer  "plithos"
     t.date     "paradosi"

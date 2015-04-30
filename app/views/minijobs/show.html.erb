@@ -1,13 +1,26 @@
-<div class="container">
-	<h1>
-		<%= @minijob.title %>
-	</h1>
+<section id="title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1><%= @minijob.title %></h1>
+				<h4>
+					<span><i class="fa fa-map-marker"></i>Chicago</span>
+					<span><i class="fa fa-clock-o"></i>Full time</span>
+					<span><i class="fa fa-euro"></i><%= @minijob.timi %></span>
+				</h4>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="jobs">
+	<div class="container">
+
 	<p>
 		<%= @minijob.description %>
 	</p>
 	<p>
-	<h3>ποσό κόστους ανα προιόν  </h3>
-		<%= @minijob.timi %> €
+
 	</p>
 		<h3>ποσοτητα</h3>
 		<%= @minijob.plithos %>
@@ -27,10 +40,9 @@
    <br><br><br>
 
 
-<%= link_to "Home", root_path %>
-<%= link_to "Edit", edit_minijob_path(@minijob) %>
-<%= link_to "Delete", minijob_path(@minijob), method: :delete, data: {confirm: "Are you sure?"} %>
-</div>
-
-
+		<%= link_to "Home", root_path %>
+		<%= link_to "Edit", edit_minijob_path(@minijob) %>
+		<%= link_to "Delete", minijob_path(@minijob), method: :delete, data: {confirm: "Are you sure?"} %>
+	</div>
+</section>
 
