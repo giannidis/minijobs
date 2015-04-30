@@ -1,11 +1,99 @@
-	<% @minijobs.each do |minijob| %>
-	  <h2>
-	    <%= link_to minijob.title, minijob %>
-	  </h2>
-	  <p>
-	    <%= minijob.description %>
-	  </p>
-	<% end %>
-	<br>
+<!-- ============ SLIDES START ============ -->
 
-	<%= link_to "New miniJob", new_minijob_path, class: "btn btn-sm btn-primary" %>
+		<div id="slider" class="sl-slider-wrapper">
+
+			<div class="sl-slider">
+			
+				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					<div class="sl-slide-inner">
+						<div class="bg-img bg-img-1"></div>
+						<div class="tint"></div>
+						<div class="slide-content">
+							<h2>Looking for a job?</h2>
+							<h3>There’s no better place to start</h3>
+							<p><%= link_to "New miniJob", new_minijob_path, class: "btn btn-lg btn-default" %></p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+
+			<nav id="nav-arrows" class="nav-arrows">
+				<span class="nav-arrow-prev">Previous</span>
+				<span class="nav-arrow-next">Next</span>
+			</nav>
+
+			<nav id="nav-dots" class="nav-dots">
+				<span class="nav-dot-current"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</nav>
+
+		</div>
+
+		<!-- ============ SLIDES END ============ -->
+
+
+
+	<!-- ============ JOBS START ============ -->
+
+    <section id="jobs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2>Recent Jobs</h2>
+
+            <div class="jobs">
+
+	            <% @minijobs.each do |minijob| %>
+
+	              <!-- Job offers -->
+	              <%= link_to minijob do %>
+	                <div class="featured"></div>
+	                <!-- <img src="images/job1.jpg" alt="" class="img-circle" /> -->
+	                <div class="title">
+	                  <h5><%= minijob.title %></h5>
+	                  <p><%= minijob.description %></p>
+	                </div>
+	                <div class="data">
+	                  <span class="city"><i class="fa fa-map-marker"></i>New York City</span>
+	                  <span class="type full-time"><i class="fa fa-clock-o"></i>Full Time</span>
+	                  <span class="sallary"><i class="fa fa-dollar"></i><%= minijob.timi %></span>
+	                </div>
+	                <% end %>
+	            <% end %>
+				<br>
+				 
+            </div>
+
+            <a class="btn btn-primary" id="more-jobs">
+              <span class="more">Show More Jobs <i class="fa fa-arrow-down"></i></span>
+              <span class="less">Show Less Jobs <i class="fa fa-arrow-up"></i></span>
+            </a>
+          </div>
+
+          <div class="col-sm-4">
+            <h2>Featured Jobs</h2>
+            <a href="#">
+              <img src="http://placehold.it/400x265.jpg" alt="Featured Job" class="img-responsive" />
+              <div class="featured-job">
+                <img src="images/job1.jpg" alt="" class="img-circle" />
+                <div class="title">
+                  <h5>Web Designer</h5>
+                  <p>Amazon</p>
+                </div>
+                <div class="data">
+                  <span class="city"><i class="fa fa-map-marker"></i>New York City</span>
+                  <span class="type full-time"><i class="fa fa-clock-o"></i>Full Time</span>
+                  <span class="sallary"><i class="fa fa-dollar"></i>45,000</span>
+                </div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique euismod lorem, a consequat orci consequat a. Donec ullamcorper tincidunt nunc, ut aliquam est pellentesque porta. In neque erat, malesuada sit amet orci ac, laoreet laoreet mauris.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOBS END ============ -->
